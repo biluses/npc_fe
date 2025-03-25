@@ -90,7 +90,7 @@ p{
 
 /* login screen */
 .login-div{
-  @apply px-4 flex flex-col items-center justify-center pt-7;
+  @apply px-5 flex flex-col items-center justify-center pt-7;
 }
 .welcome-auth-title{
   @apply my-3 text-black font-bold text-3xl leading-7;
@@ -102,7 +102,10 @@ p{
   @apply bg-secondary-black mb-4 flex w-full h-10 justify-center items-center border-2 border-secondary-black text-white rounded-3xl
 }
 .login-form{
-  @apply block w-full mt-20;
+  @apply block min-h-[250pt] w-full mt-20;
+}
+.signup-form{
+@apply block min-h-[300pt] pt-6 w-full;
 }
 .form-field-title{
   @apply mt-5 text-primary-black text-lg font-medium leading-4;
@@ -123,11 +126,31 @@ p{
   @apply text-xl text-primary-black font-semibold;
 }
 .forgot-pwd-link{
-  @apply mt-6 text-magenta font-semibold text-xl leading-4
+  @apply mt-6 text-magenta font-semibold text-[16pt] leading-4
 }
 .login-signup-link{
-  @apply tracking-normal text-magenta font-semibold text-lg leading-4;
+  @apply tracking-normal text-magenta font-semibold text-[16pt] leading-4;
 }
 .login-text{
-  @apply mt-16 text-lg tracking-normal font-semibold text-primary-black leading-4;
+  @apply mt-16 text-[16pt] tracking-normal font-semibold text-primary-black leading-4;
+}
+.login-form-bg{
+  @apply min-h-[362pt] bg-light-blue bg-opacity-40 rounded-2xl w-full m-4 px-6 py-10
+}
+
+/* upload Profile screen */
+.profile-image-container{
+  @apply w-[180pt] h-[180pt] bg-gray-200 rounded-full flex items-center justify-center overflow-hidden
+}
+.profile-img{
+  @apply w-full h-full object-cover
+}
+.add-profile-text{
+  @apply text-[14pt] font-semibold text-magenta leading-4 hover:underline cursor-pointer;
+}
+.delete-icon{
+  @apply w-12 mx-auto mt-2;
+}
+.profile-div{
+  @apply mt-[50pt] text-center;
 }
