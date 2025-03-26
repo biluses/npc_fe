@@ -16,7 +16,8 @@ module.exports = {
         "secondary-black": "#101010", // Corrected CSS variable usage
         "yellow": "#EEFF00", // Corrected CSS variable usage
         "cyan": "#00FBFB", // Corrected CSS variable usage
-        "light-blue": "#E1EDF3", // Corrected CSS variable usage
+        "light-blue": "#E1EDF3",
+        "primary-gray": "#78757E"
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"], // Added font-family definition

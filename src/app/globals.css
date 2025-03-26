@@ -157,7 +157,7 @@ p{
 
 /* PopUp model CSS */
 .popup-modal {
-  @apply flex fixed inset-0 z-50 justify-center items-center bg-black bg-opacity-50;
+  @apply hidden fixed inset-0 z-50 justify-center items-center bg-black bg-opacity-50;
 }
 .popup-content {
   @apply relative bg-white px-7 text-center py-10 shadow-lg w-full max-w-[332pt];
