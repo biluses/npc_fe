@@ -8,7 +8,7 @@ body {
 }
 
 button{
-  @apply cursor-pointer;
+  @apply cursor-pointer m-0;
 }
 
 p{
@@ -153,4 +153,53 @@ p{
 }
 .profile-div{
   @apply mt-[50pt] text-center;
+}
+
+/* PopUp model CSS */
+.popup-modal {
+  @apply flex fixed inset-0 z-50 justify-center items-center bg-black bg-opacity-50;
+}
+.popup-content {
+  @apply relative bg-white px-7 text-center py-10 shadow-lg w-full max-w-[332pt];
+}
+.popup-title {
+  @apply text-[30pt] font-bold mb-5;
+}
+.popup-text {
+  @apply text-xl leading-6 text-primary-gray font-normal mb-8;
+}
+.reward-container {
+  @apply flex justify-center gap-6 mb-9;
+}
+.reward-item {
+  @apply flex flex-col items-center max-w-16;
+}
+.reward-text {
+  @apply text-[11pt] text-black leading-4 mt-1;
+}
+.go-to-wardrobe {
+  @apply text-magenta font-semibold text-xl leading-6 mt-6;
+}
+
+
+/* App header */
+.app-header {
+  @apply sticky top-0 bg-white w-full z-10 p-4 flex items-center;
+}
+.app-title {
+  @apply mx-auto text-3xl font-bold;
+}
+
+/* Wardrobe Page */
+.wardrobe-items {
+  @apply grid grid-cols-2 h-full overflow-y-auto gap-4 p-4 text-xl;
+}
+.wardrobe-item-card {
+  @apply w-full rounded-lg;
+}
+.Wardrobe-item-name {
+  @apply text-xl font-medium;
+}
+.item-type {
+  @apply font-bold;
 }
