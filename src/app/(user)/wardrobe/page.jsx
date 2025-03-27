@@ -1,9 +1,10 @@
 "use client";
 import BottomNavbar from "@/components/BottomNavbar";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Wardrobe() {
+    const router = useRouter();
     const items = [
         { name: "Camiseta", type: "Ghost", image: "/images/White_Tee@3x.png" },
         { name: "Camiseta", type: "Demonio", image: "/images/White_Tee@3x.png" },
@@ -18,10 +19,10 @@ export default function Wardrobe() {
     ];
 
     return (
-        <div >
+        <div>
             {/* Header */}
-            <div className="sticky top-0 bg-white w-full z-10 p-4 flex items-center">
-                <button>
+            <div className="sticky top-0 bg-white w-full z-10 py-4 flex items-center">
+                <button onClick={() => router.back()}>
                     <img src="/images/Back_Arrow_Icon.svg" alt="Back" />
                 </button>
                 <h1 className="mx-auto text-3xl font-bold">Armario</h1>

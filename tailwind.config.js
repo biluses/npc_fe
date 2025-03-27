@@ -17,10 +17,21 @@ module.exports = {
         "yellow": "#EEFF00", // Corrected CSS variable usage
         "cyan": "#00FBFB", // Corrected CSS variable usage
         "light-blue": "#E1EDF3",
-        "primary-gray": "#78757E"
+        "primary-gray": "#78757E",
+        "light-gray": "#EAE8F0"
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"], // Added font-family definition
+      },
+      screens: {
+        'xs': '400px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1025px',
+        '2lg': '1025px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        "3xl": "1920px",
       },
     },
   },
