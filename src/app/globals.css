@@ -16,7 +16,7 @@ p{
 }
 
 .common-input{
-  @apply px-4 placeholder:text-primary-black placeholder:text-opacity-50 placeholder:font-normal border-2 border-light-blue rounded-3xl h-12 w-full focus:outline focus:outline-light-blue;
+  @apply pl-6 pr-10 placeholder:text-primary-black placeholder:text-opacity-50 placeholder:font-normal border-2 border-light-blue rounded-3xl h-12 w-full focus:outline focus:outline-light-blue;
 }
 
 .main-button{
@@ -43,7 +43,7 @@ p{
 .logo-div{
   @apply flex items-center justify-center pt-[60%];
 }
-.app-title{
+.auth-app-title{
   @apply text-white text-[28px] mt-6 ease-in-out font-light 
 }
 
@@ -187,12 +187,15 @@ p{
   @apply sticky top-0 bg-white w-full z-10 py-4 flex items-center;
 }
 .app-title {
-  @apply mx-auto text-3xl font-bold;
+  @apply mx-auto text-3xl text-black font-bold;
+}
+.app-logo{
+  @apply mx-auto w-[82pt] h-[27pt];
 }
 
 /* Wardrobe Page */
 .wardrobe-items {
-  @apply grid xs:grid-cols-2 h-full w-full overflow-y-auto gap-4 p-4 text-xl;
+  @apply grid xs:grid-cols-2 h-full w-full overflow-y-auto gap-4 p-4 text-xl flex-grow;
 }
 .wardrobe-item-card {
   @apply w-full rounded-lg;
@@ -220,4 +223,50 @@ p{
 }
 .notification-div{
   @apply flex items-center gap-4;
+}
+
+/* publications */
+.publications-container{
+ @apply bg-light-gray bg-opacity-40 rounded-lg p-3 mt-4
+}
+.publications-profile {
+  @apply flex items-center space-x-2;
+}
+.publications-avatar {
+  @apply w-10 h-10 rounded-full;
+}
+.publications-info {
+  @apply font-bold text-[12pt] leading-4 text-primary-black;
+}
+.publications-time {
+  @apply text-[10pt] font-medium opacity-40;
+}
+.publications-role {
+  @apply text-[10pt] font-medium italic my-0 text-primary-black;
+}
+.publications-description {
+  @apply text-[12pt] font-medium text-primary-black mt-2;
+}
+.publications-actions {
+  @apply flex w-full bg-light-gray justify-center space-x-2 rounded-2xl mt-5 h-[40pt];
+}
+.publications-action-button {
+  @apply flex items-center space-x-2;
+}
+.publications-action-button img {
+  @apply w-5 h-5;
+}
+.publications-action-button span {
+  @apply font-medium text-sm;
+}
+
+.bottombar{
+  box-shadow: 0pt -3pt 6pt #00000029;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: inherit;
+  right: 0px;
+  margin: 0 auto;
+  max-width: 393pt;
 }
