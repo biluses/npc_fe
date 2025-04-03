@@ -21,11 +21,12 @@ export default function Wardrobe() {
     return (
         <div>
             {/* Header */}
-            <div className="sticky top-0 bg-white w-full z-10 py-4 flex items-center">
+            <div className="app-header">
                 <button onClick={() => router.back()}>
                     <img src="/images/Back_Arrow_Icon.svg" alt="Back" />
                 </button>
-                <h1 className="mx-auto pr-4 text-3xl font-bold">Armario</h1>
+                <h1 className="app-title">Armario</h1>
+                <span className="w-[30px]" />
             </div>
 
             {/* Grid Items */}
