@@ -19,13 +19,13 @@ const FriendPage = () => {
     ];
     return (
         <div className="flex flex-col h-full">
-            <div className="sticky top-0 bg-white w-full z-10 py-4 flex items-center">
+            <div className="sticky top-0 bg-white w-full z-10 p-4 flex items-center">
                 <button onClick={() => router.back()}>
                     <img src="/images/Back_Arrow_Icon.svg" alt="Back" />
                 </button>
                 <h1 className="mx-auto text-3xl font-bold">Amigos</h1>
             </div>
-            <div className="sticky top-[68px] bg-white z-10">
+            <div className="sticky top-[68px] px-4 bg-white z-10">
                 <div className="password-main-div">
                     <input type="text" name="search" placeholder="Buscar" className="relative common-input" />
                     <img src="/images/search_icon.svg" className="password-icon-img pr-2" alt="search_icon" />
@@ -45,7 +45,7 @@ const FriendPage = () => {
                     </div>
                 ))}
             </div> */}
-            <div className="pb-28 w-full my-5 mx-auto grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-4 gap-3">
+            <div className="pb-28 px-4 w-full my-5 mx-auto grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-4 gap-3">
                 {friends.map((friend) => (
                     <div key={friend.id} className="aspect-square relative">
                         <img

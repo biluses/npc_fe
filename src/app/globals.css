@@ -183,7 +183,7 @@ p{
 
 /* App header */
 .app-header {
-  @apply sticky top-0 bg-white w-full z-10 py-4 flex items-center justify-between;
+  @apply sticky top-0 bg-white w-full z-10 p-4 flex items-center justify-between;
 }
 .app-title {
   @apply mx-auto text-3xl text-black font-bold;
@@ -194,7 +194,7 @@ p{
 
 /* Wardrobe Page */
 .wardrobe-items {
-  @apply grid xs:grid-cols-2 h-full w-full overflow-y-auto gap-4 pb-28 text-xl flex-grow;
+  @apply grid xs:grid-cols-2 h-full w-full overflow-y-auto gap-4 px-4 pb-28 text-xl flex-grow;
 }
 .wardrobe-item-card {
   @apply w-full rounded-lg;
@@ -226,13 +226,13 @@ p{
 
 /* publications */
 .publications-container{
- @apply bg-light-gray bg-opacity-40 rounded-lg p-3 my-4;
+ @apply bg-light-gray bg-opacity-40 rounded-lg my-4;
 }
 .publications-profile {
   @apply flex items-center space-x-2;
 }
 .publications-avatar {
-  @apply w-10 h-10 rounded-full;
+  @apply w-10 h-10 rounded-full object-cover;
 }
 .publications-info {
   @apply font-bold text-[12pt] leading-4 text-primary-black;
@@ -244,16 +244,16 @@ p{
   @apply text-[10pt] font-medium italic my-0 text-primary-black;
 }
 .publications-description {
-  @apply text-[12pt] font-medium text-primary-black mt-2;
+  @apply text-[12pt] font-medium text-primary-black mt-2 p-3;
 }
 .publications-actions {
-  @apply flex w-full bg-light-gray justify-center space-x-2 rounded-2xl mt-5 h-[40pt];
+  @apply flex w-full bg-light-gray justify-center space-x-5 rounded-2xl mt-5 h-[40pt];
 }
 .publications-action-button {
   @apply flex items-center space-x-2;
 }
 .publications-action-button img {
-  @apply w-5 h-5;
+  @apply w-6 h-6;
 }
 .publications-action-button span {
   @apply font-medium text-sm;
@@ -277,7 +277,7 @@ p{
 }
 
 .tabs-container {
-  @apply flex flex-wrap justify-center gap-4 mt-4;
+  @apply flex flex-wrap justify-center gap-4 mt-4 px-4;
 }
 .tab-button {
   @apply text-[14pt] leading-4 font-medium text-primary-black;
@@ -286,7 +286,7 @@ p{
   @apply border-b-2 border-black bg-yellow;
 }
 .token-status-container {
-  @apply pb-28;
+  @apply pb-28 px-4;
 }
 .token-grid {
   @apply grid xs:grid-cols-2 gap-3 mt-4;
