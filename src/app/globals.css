@@ -313,7 +313,7 @@ p{
   @apply flex;
 }
 .friend-images img {
-  @apply w-16 h-16 rounded-full border-2 border-white -ml-4 first:ml-0;
+  @apply w-16 h-16 rounded-full object-cover border-2 border-white -ml-4 first:ml-0;
 }
 .friend-count {
   @apply text-[14pt] font-bold xs:w-4;

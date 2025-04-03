@@ -20,7 +20,7 @@ export default function ProfilePage() {
             {/* Grid Items */}
             <div className="p-4 flex flex-col gap-4 items-center justify-center">
                 <div className="profile-container">
-                    <img src="/images/White_Tee.png" alt="profile" />
+                    <img src="/images/profile.jpg" alt="profile" className="object-cover" />
                     <span className="profile-online-dot"></span>
                 </div>
                 <h2 className="profile-username">iamsarah</h2>
@@ -61,9 +61,9 @@ export default function ProfilePage() {
                     <div className="friend-container" onClick={() => router.push("/friends")}>
                         <div className="friend-list">
                             <div className="friend-images">
-                                <img src="/images/White_Tee@3x.png" alt="Friend 1" />
-                                <img src="/images/White_Tee@3x.png" alt="Friend 2" />
-                                <img src="/images/White_Tee@3x.png" alt="Friend 3" />
+                                <img src="/images/profile.jpg" alt="Friend 1" />
+                                <img src="/images/profile.jpg" alt="Friend 2" />
+                                <img src="/images/profile.jpg" alt="Friend 3" />
                             </div>
                             <p className="friend-count">19 <span>Amigos</span></p>
                         </div>
