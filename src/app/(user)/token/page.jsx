@@ -3,8 +3,10 @@
 import BottomNavbar from "@/components/BottomNavbar";
 import TokenDetailsCard from "@/components/TokenDetails";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const TokenPage = () => {
+    const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div>
