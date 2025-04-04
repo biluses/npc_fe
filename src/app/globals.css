@@ -226,7 +226,7 @@ p{
 
 /* publications */
 .publications-container{
- @apply bg-light-gray bg-opacity-40 rounded-lg my-4;
+ @apply bg-light-gray bg-opacity-40 rounded-lg my-4 p-2;
 }
 .publications-profile {
   @apply flex items-center space-x-2;
