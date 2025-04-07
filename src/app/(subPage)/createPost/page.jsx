@@ -1,8 +1,10 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function CreatePost() {
     const router = useRouter();
+    const [isOpenConfirmModel, setIsOpenConfirmModel] = useState(false);
     return (
         <div className="flex flex-col min-h-screen">
             <div className="sticky top-0 bg-white w-full z-10 shadow-[0px_4px_8px_#00000029] pb-6">
@@ -41,11 +43,30 @@ export default function CreatePost() {
                 {/* Publish button */}
             </div>
             <div className="pb-16 px-4 mt-auto">
-                <button className="main-button">
+                <button className="main-button" onClick={() => setIsOpenConfirmModel(true)}>
                     Hacer publicación
                 </button>
             </div>
+            {isOpenConfirmModel && (
+                <div
+                    id="popup-modal"
+                    tabIndex={-1}
+                    className=" fixed flex inset-0 z-50 justify-center items-center bg-black bg-opacity-50"
+                >
+                    <div className="relative bg-white px-4 flex flex-col justify-center items-center py-7 shadow-lg w-full max-w-[302pt] mx-5">
 
+                        <h1 className="text-3xl font-bold mb-5">¡Genial!</h1>
+
+                        <div className="flex justify-center gap-6 mb-9">
+                            <div className="flex flex-col items-center max-w-16">
+                                <img src="/images/Receive_token.svg" alt="token" className="w-10 h-10" />
+                            </div>
+                        </div>
+                        <button className="main-button" onClick={() => router.push("/createPost")}>Enviar más</button>
+                        <button onClick={() => router.push("/profile")} className="text-magenta font-semibold text-xl leading-6 mt-6">Hazlo más tarde</button>
+                    </div>
+                </div>
+            )}
         </div >
     );
 }
