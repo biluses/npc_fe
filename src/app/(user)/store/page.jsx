@@ -37,7 +37,7 @@ const StorePage = () => {
                 </div>
             </div>
 
-            <div className="bg-gray-100 rounded-2xl p-6 my-6">
+            <div className="bg-gray-100 rounded-2xl my-6">
                 <Swiper
                     pagination={{ clickable: true }}
                     autoplay={{ delay: 2000, disableOnInteraction: false }} // proper autoplay config
