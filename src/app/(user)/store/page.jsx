@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import BottomNavbar from "@/components/BottomNavbar";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
@@ -6,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 const StorePage = () => {
+    const router = useRouter();
     const featuredImages = [
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBVACkpTB-jEuIMqPCHxgu84RCAUpSpd8ikA&s',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4Yywo1LuQVLTrYnZu1UfhLDUgGCUVB8kSZw&s',
@@ -64,6 +66,7 @@ const StorePage = () => {
                             src="https://png.pngtree.com/png-vector/20250307/ourmid/pngtree-casual-and-stylish-a-black-t-shirt-hanging-neatly-on-hanger-png-image_15725290.png" // Replace with actual image
                             alt="Camisetas"
                             className="h-full w-full object-contain"
+                            onClick={() => router.push("/productDetails/2")}
                         />
                     </div>
                     <p className="text-lg font-semibold my-1">Camisetas</p>

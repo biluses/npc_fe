@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function CartDrawer() {
+    const router = useRouter();
     const [quantity, setQuantity] = useState(1);
     const price = 38.00;
 
@@ -12,7 +14,7 @@ export default function CartDrawer() {
                     <div className="w-10"></div>
                     <h1 className="app-title">Carrito</h1>
                     <div className="w-auto flex items-center gap-3">
-                        <button onClick={() => router.push("/notification")}>
+                        <button >
                             <svg xmlns="http://www.w3.org/2000/svg" width="20.124" height="20.143" viewBox="0 0 20.124 20.143">
                                 <path id="Cart_Icon" d="M46.043-859.857a1.94,1.94,0,0,1-1.423-.592,1.94,1.94,0,0,1-.592-1.423,1.94,1.94,0,0,1,.592-1.423,1.94,1.94,0,0,1,1.423-.592,1.94,1.94,0,0,1,1.423.592,1.94,1.94,0,0,1,.592,1.423,1.94,1.94,0,0,1-.592,1.423A1.94,1.94,0,0,1,46.043-859.857Zm10.071,0a1.94,1.94,0,0,1-1.423-.592,1.94,1.94,0,0,1-.592-1.423,1.94,1.94,0,0,1,.592-1.423,1.94,1.94,0,0,1,1.423-.592,1.94,1.94,0,0,1,1.423.592,1.94,1.94,0,0,1,.592,1.423,1.94,1.94,0,0,1-.592,1.423A1.94,1.94,0,0,1,56.114-859.857ZM44.23-877.986H59.085a.964.964,0,0,1,.881.516,1.015,1.015,0,0,1,.025,1.045l-3.575,6.446a2.017,2.017,0,0,1-.743.781,1.959,1.959,0,0,1-1.02.277h-7.5l-1.108,2.014H58.128v2.014H46.043a1.864,1.864,0,0,1-1.712-.995,1.9,1.9,0,0,1-.05-1.977l1.36-2.467-3.626-7.654H40V-880h3.273Z" transform="translate(-40 880)" />
                             </svg></button>
@@ -65,7 +67,7 @@ export default function CartDrawer() {
                         <span>Total de artículos ({quantity})</span>
                         <span className="font-bold">€{(quantity * price).toFixed(2)}</span>
                     </div>
-                    <button className="main-button">
+                    <button className="main-button" onClick={() => router.push("/checkout")}>
                         Realizar pago ahora
                     </button>
                 </div>
