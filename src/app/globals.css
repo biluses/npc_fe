@@ -185,6 +185,12 @@ p{
 .app-header {
   @apply sticky top-0 bg-white w-full z-10 p-4 flex items-center justify-between;
 }
+.app-header1{
+  @apply sticky top-0 bg-white w-full z-10;
+}
+.app-header-btn-div{
+  @apply w-auto flex items-center gap-3;
+}
 .app-title {
   @apply mx-auto text-2xl text-black font-bold;
 }
@@ -383,4 +389,117 @@ p{
 }
 .scanner-div{
   @apply absolute xs:bottom-7 bottom-10 left-1/2 transform -translate-x-1/2 xs:p-5 p-3 rounded-full bg-black shadow-lg;
+}
+
+
+/* Add-To-Cart */
+
+.remove-all-btn {
+  @apply text-xs text-red-500 mb-2;
+}
+.product-item {
+  @apply flex items-center justify-between py-3 border-b;
+}
+.product-details {
+  @apply flex items-center gap-3;
+}
+.product-img {
+  @apply w-14 h-14 object-contain;
+}
+.product-name {
+  @apply font-semibold text-sm;
+}
+.quantity-control {
+  @apply flex items-center border rounded-full px-2 py-1 mt-1 w-fit;
+}
+.quantity-btn {
+  @apply px-2 text-lg font-bold;
+}
+.quantity-value {
+  @apply px-2 text-sm;
+}
+.product-price {
+  @apply font-semibold text-base;
+}
+.cart-footer {
+  @apply w-full bottom-0 z-10 bg-white py-3 px-3 relative;
+  box-shadow: 0pt -1pt 4pt #00000029;
+}
+.cart-total {
+  @apply flex justify-between text-base mb-3;
+}
+.cart-total-price {
+  @apply font-bold;
+}
+
+/* CheckOut Page */
+.checkout-section {
+  @apply pb-[190px] px-4;
+}
+.checkout-block {
+  @apply space-y-4;
+}
+.checkout-heading {
+  @apply text-base font-semibold text-black;
+}
+.delivery-address {
+  @apply bg-light-gray p-4 rounded-lg;
+}
+.delivery-name {
+  @apply font-semibold text-black;
+}
+.delivery-text {
+  @apply text-sm text-black;
+}
+.edit-address-btn {
+  @apply text-sm text-magenta font-medium mt-1 hover:underline;
+}
+.payment-heading {
+  @apply text-base mt-4 font-semibold text-gray-800;
+}
+.payment-method {
+  @apply space-y-4 mt-4;
+}
+.payment-option {
+  @apply flex items-center justify-between gap-3;
+}
+.payment-inner {
+  @apply flex items-center gap-3;
+}
+.payment-label {
+  @apply flex items-center border border-gray-300 rounded-lg p-3 cursor-pointer;
+}
+.payment-option span{
+  @apply text-sm font-semibold text-black;
+}
+.payment-option input {
+  @apply  text-black mr-5;
+}
+.input-wrapper {
+  @apply w-full border border-light-gray rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-light-gray;
+}
+.input-label {
+  @apply block text-sm text-primary-black mb-1;
+}
+.expiry-cvv-group {
+  @apply flex gap-4;
+}
+.expiry-input {
+  @apply w-1/2;
+}
+.cvv-input {
+  @apply w-24;
+}
+.payment-summary-container {
+  @apply fixed bottom-0 left-0 right-0 bg-white shadow-md p-4 max-w-[393pt] mx-auto;
+  box-shadow: 0pt -3pt 6pt #00000029;
+}
+.payment-summary-details {
+  @apply text-sm text-gray-700 space-y-2;
+}
+.payment-summary-row {
+  @apply flex justify-between;
+}
+.payment-summary-total {
+  @apply flex justify-between font-bold text-lg text-black border-t border-light-gray;
 }
