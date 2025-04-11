@@ -46,7 +46,9 @@ p{
 .auth-app-title{
   @apply text-white text-[28px] mt-6 ease-in-out font-light 
 }
-
+.inline-center-gap {
+  @apply flex items-center space-x-2;
+}
 /* intro screen */
 .intro-main-div{
   @apply bg-black min-h-screen;
@@ -186,7 +188,13 @@ p{
   @apply sticky top-0 bg-white w-full z-10 p-4 flex items-center justify-between;
 }
 .app-header1{
-  @apply sticky top-0 bg-white w-full z-10;
+  @apply sticky top-0 bg-white w-full z-10 shadow-[0px_4px_8px_#00000029]
+}
+.app-header-inner1 {
+  @apply p-4 flex items-center justify-between;
+}
+.app-header-inner {
+  @apply p-4 text-center relative;
 }
 .app-header-btn-div{
   @apply w-auto flex items-center gap-3;
@@ -196,6 +204,9 @@ p{
 }
 .app-logo{
   @apply mx-auto w-[82pt] h-[27pt];
+}
+.back-button {
+  @apply absolute right-5 top-1/2 transform -translate-y-1/2 cursor-pointer;
 }
 
 /* Wardrobe Page */
@@ -233,9 +244,6 @@ p{
 /* publications */
 .publications-container{
  @apply bg-light-gray bg-opacity-40 rounded-lg my-4 cursor-pointer;
-}
-.publications-profile {
-  @apply flex items-center space-x-2;
 }
 .publications-avatar {
   @apply w-10 h-10 rounded-full object-cover;
@@ -502,4 +510,65 @@ p{
 }
 .payment-summary-total {
   @apply flex justify-between font-bold text-lg text-black border-t border-light-gray;
+}
+
+/* Post Details screen */
+.post-textarea-wrapper {
+  @apply relative z-10 pb-5 -mt-7;
+}
+.post-textarea {
+  @apply w-full border-2 border-black rounded-md p-3 text-sm resize-none focus:outline-none;
+}
+.char-counter {
+  @apply absolute bottom-1 right-2 text-xs text-gray-400;
+}
+.add-user-container {
+  @apply flex items-center gap-3 bg-gray-100 rounded-md p-4;
+}
+.add-user-container span {
+  @apply text-sm;
+}
+.add-user-container button {
+  @apply ml-auto;
+}
+.confirm-button-container {
+  @apply pb-16 px-4 mt-auto;
+}
+.modal-overlay {
+  @apply fixed flex inset-0 z-50 justify-center items-center bg-black bg-opacity-50;
+}
+.modal-box {
+  @apply relative bg-white px-4 flex flex-col justify-center items-center py-7 shadow-lg w-full max-w-[302pt] mx-5;
+}
+.modal-heading {
+  @apply text-3xl font-bold mb-5;
+}
+.modal-icon-wrapper {
+  @apply flex justify-center gap-6 mb-9;
+}
+.modal-icon-inner {
+  @apply flex flex-col items-center max-w-16;
+}
+.modal-later-button {
+  @apply text-magenta font-semibold text-xl leading-6 mt-6;
+}
+.search-input{
+  @apply absolute left-1/2 z-30 -translate-x-1/2  w-11/12 px-4 py-3 rounded-full border border-gray-300 bg-white shadow-md focus:outline-none
+}
+
+/* Friends List  */
+.friends-grid {
+  @apply my-10 px-4 w-full mx-auto grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-4 gap-3;
+}
+.friend-avatar-wrapper {
+  @apply aspect-square relative rounded-full;
+}
+.friend-avatar-img {
+  @apply w-full h-full rounded-full object-cover border border-white;
+}
+.friend-online-indicator {
+  @apply absolute top-2 right-2 w-4 h-4 bg-cyan border-2 rounded-full border-white;
+}
+.friend-token-count{
+  @apply bottom-0 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs rounded-full px-3 py-1;
 }
