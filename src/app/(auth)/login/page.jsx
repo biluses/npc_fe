@@ -20,7 +20,7 @@ const Carousel = () => {
             remember: false,
         },
         validationSchema: Yup.object({
-            email: Yup.string().email("Correo inválido").required("Correo es requerido"),
+            email: Yup.string().email("Correo inválido").required("El correo electrónico es obligatorio"),
             password: Yup.string().min(6, "Mínimo 6 caracteres").required("Contraseña es requerida"),
         }),
         onSubmit: async (values) => {
@@ -29,7 +29,7 @@ const Carousel = () => {
                     email: values.email,
                     password: values.password,
                 }).unwrap();
-                toast.success("Login exitoso");
+                toast.success(response.message);
                 dispatch(setLogin(response?.data))
                 router.push("/profile");
             } catch (err) {
@@ -97,7 +97,7 @@ const Carousel = () => {
                         Iniciar sesión
                     </button>
                 </form>
-                <Link href="" className="forgot-pwd-link">¿Olvidaste tu contraseña?</Link>
+                <Link href="/forgot-password" className="forgot-pwd-link text-center">¿Olvidaste tu contraseña?</Link>
                 <p className="login-text">¿No tienes una cuenta? <Link href="/signup" className="login-signup-link">Crear una ahora</Link></p>
             </div>
         </div>

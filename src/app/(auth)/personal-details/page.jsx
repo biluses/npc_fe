@@ -27,18 +27,21 @@ const MultiStepForm = () => {
 
     const validationSchemas = [
         Yup.object({
-            password: Yup.string().min(6, "Min 6 characters").required("Required"),
+            password: Yup.string()
+                .min(6, "Mínimo 6 caracteres")
+                .required("La contraseña es obligatoria"),
+
             confirmPassword: Yup.string()
-                .oneOf([Yup.ref("password"), null], "Passwords must match")
-                .required("Required"),
+                .oneOf([Yup.ref("password"), null], "Las contraseñas deben coincidir")
+                .required("La confirmación de la contraseña es obligatoria"),
         }),
         Yup.object({
-            username: Yup.string().required("Name is required"),
-            address1: Yup.string().required("Required"),
-            address2: Yup.string().required("Required"),
-            city: Yup.string().required("Required"),
-            state: Yup.string().required("Required"),
-            postalCode: Yup.string().required("Required"),
+            username: Yup.string().required("El nombre es requerido"),
+            address1: Yup.string().required("La dirección 1 es requerida"),
+            address2: Yup.string().required("La dirección 2 es requerida"),
+            city: Yup.string().required("La provincia es requerida"),
+            state: Yup.string().required("El estado es requerido"),
+            postalCode: Yup.string().required("El código postal es requerido"),
         }),
         Yup.object({}),
     ];
@@ -78,7 +81,7 @@ const MultiStepForm = () => {
 
                 } catch (err) {
                     console.log("signup api error", err);
-                    toast.error(err?.data?.message || 'Something went wrong');
+                    toast.error(err?.data?.message || 'Algo salió mal');
                 } finally {
                     setSubmitting(false);
                     resetForm();
@@ -192,6 +195,9 @@ const MultiStepForm = () => {
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                             />
+                            {formik.touched.address2 && formik.errors.address2 && (
+                                <div className="error-msg">{formik.errors.address2}</div>
+                            )}
                             <input
                                 type="text"
                                 name="city"
@@ -201,6 +207,9 @@ const MultiStepForm = () => {
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                             />
+                            {formik.touched.city && formik.errors.city && (
+                                <div className="error-msg">{formik.errors.city}</div>
+                            )}
                             <input
                                 type="text"
                                 name="state"
@@ -210,6 +219,9 @@ const MultiStepForm = () => {
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                             />
+                            {formik.touched.state && formik.errors.state && (
+                                <div className="error-msg">{formik.errors.state}</div>
+                            )}
                             <input
                                 type="text"
                                 name="postalCode"
@@ -219,6 +231,9 @@ const MultiStepForm = () => {
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                             />
+                            {formik.touched.postalCode && formik.errors.postalCode && (
+                                <div className="error-msg">{formik.errors.postalCode}</div>
+                            )}
                         </div>
                     )
                 }
