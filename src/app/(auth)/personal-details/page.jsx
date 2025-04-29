@@ -63,7 +63,6 @@ const MultiStepForm = () => {
             if (step < 3) {
                 setStep((prev) => prev + 1);
             } else {
-                console.log("Final Values", values);
                 const { confirmPassword, ...filterPayload } = values;
                 const payload = {
                     email: userEmail,
@@ -73,11 +72,13 @@ const MultiStepForm = () => {
                 }
                 try {
                     const response = await register(payload).unwrap();
-                    toast.success(response.message);
-                    console.log("response", response);
-                    dispatch(setEmail(null));
-                    dispatch(setLogin(response?.data))
-                    router.push("/profile");
+                    if (response?.status) {
+                        localStorage.setItem('secretId', response?.data?.secretId);
+                        dispatch(setEmail(null));
+                        router.push("/verify-account");
+                    } else {
+                        toast.error("Something went wrong");
+                    }
 
                 } catch (err) {
                     console.log("signup api error", err);

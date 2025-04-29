@@ -24,6 +24,20 @@ export const authApiSlice = createApi({
                 body: credentials,
             }),
         }),
+        checkEmail: builder.query({
+            query: (credentials) => ({
+                url: `/public/${apiVersion}/user/auth/email-check`,
+                method: "POST",
+                body: credentials,
+            }),
+        }),
+        verifyAccount: builder.query({
+            query: (credentials) => ({
+                url: `/public/${apiVersion}/user/auth/verify-account`,
+                method: "POST",
+                body: credentials,
+            }),
+        }),
         // forgotpassword: builder.query({
         //     query: (credentials) => ({
         //         url: `${apiVersion}/all-user/auth/send-forgot-mail`,
@@ -48,4 +62,4 @@ export const authApiSlice = createApi({
     }),
 });
 
-export const { useLazyLoginQuery, useLazyForgotpasswordQuery, useLazyVerifyotpQuery, useSendotpMutation, useRegisterMutation } = authApiSlice;
+export const { useLazyLoginQuery, useLazyCheckEmailQuery, useLazyVerifyAccountQuery, useLazyForgotpasswordQuery, useLazyVerifyotpQuery, useSendotpMutation, useRegisterMutation } = authApiSlice;

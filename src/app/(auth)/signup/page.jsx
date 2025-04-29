@@ -7,11 +7,13 @@ import * as Yup from "yup";
 import { useDispatch } from 'react-redux';
 import { toast } from "react-toastify";
 import { setEmail } from "../../../../redux/reducers/slice/authSlice";
+import { useLazyCheckEmailQuery } from "../../../../services/auth/auth";
 
 const Carousel = () => {
     const [isShow, setIsShow] = useState(false);
     const router = useRouter();
     const dispatch = useDispatch();
+    const [checkEmail] = useLazyCheckEmailQuery();
 
     const formik = useFormik({
         initialValues: {
@@ -22,10 +24,27 @@ const Carousel = () => {
                 .email("Correo electrónico no válido")
                 .required("El correo electrónico es obligatorio"),
         }),
-        onSubmit: (values) => {
+        onSubmit: async (values) => {
             console.log("Form values:", values);
-            dispatch(setEmail(values.email));
-            router.push("/personal-details");
+            const payload = {
+                email: values.email,
+            }
+            try {
+                const response = await checkEmail(payload).unwrap();
+                if (response?.data?.isUnique) {
+                    toast.success(response?.message);
+                    dispatch(setEmail(values.email));
+                    router.push("/personal-details");
+                } else {
+                    toast.error("Email already used");
+                }
+            } catch (err) {
+                console.log("signup api error", err);
+                toast.error(err?.data?.message || 'Algo salió mal');
+            } finally {
+                setSubmitting(false);
+                resetForm();
+            }
         },
     });
 
