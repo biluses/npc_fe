@@ -17,7 +17,6 @@ export default function Home() {
 
     const secondTimer = setTimeout(() => {
       if (userAuth?.token) {
-        console.log("in if");
         router.push("/profile");
       } else {
         router.push("/intro");

@@ -33,7 +33,6 @@ const Carousel = () => {
                 dispatch(setLogin(response?.data))
                 router.push("/profile");
             } catch (err) {
-                console.log(err);
                 toast.error(err?.data?.message || "Error al iniciar sesión");
             }
         },

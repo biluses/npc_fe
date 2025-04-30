@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import { setEmail, setLogin } from "../../../../redux/reducers/slice/authSlice";
 import { useLazyVerifyAccountQuery } from "../../../../services/auth/auth";
 
-const Carousel = () => {
+const verifyAccount = () => {
     const dispatch = useDispatch();
     const router = useRouter();
     const secretId = typeof window !== 'undefined' ? localStorage.getItem('secretId') : null;
@@ -35,7 +35,6 @@ const Carousel = () => {
 
             try {
                 const response = await verifyAccount(payload).unwrap();
-                console.log("response", response);
                 if (response?.status) {
                     localStorage.removeItem("secretId");
                     toast.success(response?.message);
@@ -56,7 +55,6 @@ const Carousel = () => {
         },
     });
 
-    // Auto-focus next input and set value
     const handleChange = (e, index) => {
         const value = e.target.value;
         if (isNaN(value)) return;
@@ -70,14 +68,13 @@ const Carousel = () => {
         }
     };
 
-    // Backspace handling
     const handleKeyDown = (e, index) => {
         if (e.key === "Backspace" && !formik.values.otp[index] && index > 0) {
             otpRefs[index - 1].current?.focus();
         }
     };
 
-    // Auto-submit if OTP fully entered
+    // Auto-submit if OTP fully entere
     useEffect(() => {
         if (formik.values.otp.length === otpLength) {
             formik.handleSubmit();
@@ -127,4 +124,4 @@ const Carousel = () => {
     );
 };
 
-export default Carousel;
+export default verifyAccount;

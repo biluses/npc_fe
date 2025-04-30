@@ -25,7 +25,6 @@ const Carousel = () => {
                 .required("El correo electrónico es obligatorio"),
         }),
         onSubmit: async (values) => {
-            console.log("Form values:", values);
             const payload = {
                 email: values.email,
             }
