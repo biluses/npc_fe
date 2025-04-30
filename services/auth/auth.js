@@ -38,28 +38,21 @@ export const authApiSlice = createApi({
                 body: credentials,
             }),
         }),
-        // forgotpassword: builder.query({
-        //     query: (credentials) => ({
-        //         url: `${apiVersion}/all-user/auth/send-forgot-mail`,
-        //         method: "POST",
-        //         body: credentials,
-        //     }),
-        // }),
-        // verifyotp: builder.query({
-        //     query: (credentials) => ({
-        //         url: `${apiVersion}/all-user/auth/verify-otp`,
-        //         method: "POST",
-        //         body: credentials,
-        //     }),
-        // }),
-        // sendotp: builder.mutation({
-        //     query: (credentials) => ({
-        //         url: `${apiVersion}/all-user/auth/send-otp`,
-        //         method: "POST",
-        //         body: credentials,
-        //     }),
-        // }),
+        forgotpassword: builder.query({
+            query: (credentials) => ({
+                url: `/public/${apiVersion}/user/auth/forgot-password`,
+                method: "POST",
+                body: credentials,
+            }),
+        }),
+        verifyForgotCode: builder.query({
+            query: (credentials) => ({
+                url: `/public/${apiVersion}/user/auth/verify-forgotCode`,
+                method: "POST",
+                body: credentials,
+            }),
+        }),
     }),
 });
 
-export const { useLazyLoginQuery, useLazyCheckEmailQuery, useLazyVerifyAccountQuery, useLazyForgotpasswordQuery, useLazyVerifyotpQuery, useSendotpMutation, useRegisterMutation } = authApiSlice;
+export const { useLazyLoginQuery, useLazyCheckEmailQuery, useLazyVerifyAccountQuery, useLazyForgotpasswordQuery, useLazyVerifyForgotCodeQuery, useRegisterMutation } = authApiSlice;

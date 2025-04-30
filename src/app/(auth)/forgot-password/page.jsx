@@ -7,11 +7,13 @@ import * as Yup from "yup";
 import { useDispatch } from 'react-redux';
 import { toast } from "react-toastify";
 import { setEmail } from "../../../../redux/reducers/slice/authSlice";
+import { useLazyForgotpasswordQuery } from "../../../../services/auth/auth";
 
-const Carousel = () => {
+const ForgotPassword = () => {
     const [isShow, setIsShow] = useState(false);
     const router = useRouter();
     const dispatch = useDispatch();
+    const [forgotPassword] = useLazyForgotpasswordQuery();
 
     const formik = useFormik({
         initialValues: {
@@ -22,10 +24,28 @@ const Carousel = () => {
                 .email("Correo electrónico no válido")
                 .required("El correo electrónico es obligatorio"),
         }),
-        onSubmit: (values) => {
-            console.log("Form values:", values);
-            // dispatch(setEmail(values.email));
-            router.push("/reset-password");
+        onSubmit: async (values) => {
+            const payload = {
+                email: values.email,
+                isAccountResend: false
+            }
+            try {
+                const response = await forgotPassword(payload).unwrap();
+                if (response?.status) {
+                    toast.success(response?.message);
+                    localStorage.setItem('secretId', response?.data?.secretId);
+                    dispatch(setEmail(values.email));
+                    router.push("/reset-password");
+                } else {
+                    toast.error("Email already used");
+                }
+            } catch (err) {
+                console.log("signup api error", err);
+                toast.error(err?.data?.message || 'Algo salió mal');
+            } finally {
+                setSubmitting(false);
+                resetForm();
+            }
         },
     });
 
@@ -61,4 +81,4 @@ const Carousel = () => {
     );
 };
 
-export default Carousel;
+export default ForgotPassword;
